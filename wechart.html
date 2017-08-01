@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+        <style type="text/css" media="screen">
+            *{
+                margin:0;
+                padding:0;
+            }
+            html{
+                height:100%;
+                width:100%;
+            }
+            body{
+                height:100%;
+                width:100%;
+            }
+            header{
+                width:100%;
+                height:80px;
+                background:#48cb46;
+                position:fixed;
+                /*position:relative;*/
+                z-index: 1;
+            }
+            header span{
+                display: block;
+                position:absolute;
+                left: 50%;
+                top:50%;
+                transform: translate(-50%,-50%);
+            }
+            footer{
+                width:100%;
+                height:80px;
+                background:#f2f1ef;
+                position:relative;
+                position:fixed;
+                bottom:0px;
+                z-index: 1;
+            }
+            footer img{
+                display:block;
+                position:absolute;
+            }
+            footer img:first-child{
+                left:12.5%;
+                top:50%;
+                transform:translate(-50%,-50%);
+            }
+            footer img:nth-child(2){
+                left:37.5%;
+                top:50%;
+                transform:translate(-50%,-50%);
+            }
+            footer img:nth-child(3){
+                left:62.5%;
+                top:50%;
+                transform:translate(-50%,-50%);
+            }
+            footer img:last-child{
+                left:87.5%;
+                top:50%;
+                transform:translate(-50%,-50%);
+            }
+            section{
+                width:100%;
+                height:100%;
+                padding-top:80px;
+            }
+             /*section li span:nth-child(2){
+                display:inline-block;
+                line-height: 47px;
+                vertical-align: middle;
+                overflow:hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }*/
+            section li span{
+                position:absolute;
+                right:5%;
+                top:40%;
+                transform:translateY(-50%);
+            }
+            section div{
+                height:94px;
+               /* text-overflow:ellipsis;
+                white-space:nowrap;
+                overflow:hidden;*/
+                /*float: left;*/
+              /*  padding-right: 50px;
+                box-sizing: border-box;*/
+            }
+            div::after{
+                 content:"";
+                 clear: both;
+                 height:0;
+                 display:block;
+                 visibility: hidden;
+            }
+            section img{
+                float:left;
+            }
+            section div p:first-child{
+                height: 50px;
+                overflow:hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-weight: bold;
+            }
+            section div p:nth-child(2){
+                text-overflow:ellipsis;
+                white-space:nowrap;
+                overflow:hidden;
+                height:40px;
+                line-height: 40px;
+                           }
+            li{
+                height:120px;
+                border-bottom:1px solid #ccc;
+                position:relative;
+                padding-right: 50px;
+                box-sizing: border-box;
+                list-style: none;
+                text-overflow:ellipsis;
+                white-space:nowrap;
+                overflow:hidden;
+            }
+        </style>
+    </head>
+    <body>
+    <header>
+        <span>微信</span>
+    </header>
+    <section>
+        <ul>
+            <li><img src="images/bg5.png"><div><p>johny</p><p>明天去看忍者神龟明天去看忍者神龟明天去看忍者神龟天去看忍者神龟天去看忍者神龟</p></div><span>9:10</span></li>
+            <li><img src="images/bg6.png"><div><p>johny</p><p>明天去看忍者神龟</p></div><span>9:10</span></li>
+            <li><img src="images/bg7.png"><div><p>johny</p><p>明天去看忍者神龟</p></div><span>9:10</span></li>
+            <li><img src="images/bg8.png"><div><p>johny</p><p>明天去看忍者神龟</p></div><span>9:10</span></li>
+        </ul>
+    </section>
+    <footer>
+           <img src="images/bg1.png">
+           <img src="images/bg2.png">
+           <img src="images/bg3.png">
+           <img src="images/bg4.png">
+    </footer>
+    </body>
+</html>
