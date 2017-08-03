@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+        <script type="text/javascript">
+           document.documentElement.style.fontSize=innerWidth/16+"px"
+        </script>
+        <style type="text/css" media="screen">
+            *{
+                -webkit-box-sizing:border-box;
+            }
+            html,body{
+                margin:0px;
+                width:100%;
+                height:100%;
+            }
+            .container{
+                width:100%;
+                height:100%;
+                position: relative;
+            }
+            ul{
+                width:400%;
+                height:500px;
+                margin:0;
+                padding:0;
+                position:absolute;
+                list-style: none;
+                transition: all 300ms;
+            }
+            ul li{
+                float: left;
+                height:500px;
+                background:orange;
+                border:1px solid red;
+                width:25%;
+            }
+        </style>
+    </head>
+    <body>
+       <div class="container">
+           <ul id="list">
+               <li>0001</li>
+               <li>0002</li>
+               <li>0003</li>
+               <li>0004</li>
+           </ul>
+       </div>
+       <script type="text/javascript">
+       function getstyle(obj,attr){
+        return getComputedStyle(obj,null)[attr];
+       }
+           var list=document.getElementById("list");
+           var lis=list.getElementsByTagName("li");
+           var oleft=0;
+           var n=0;
+           var w=parseInt(getstyle(lis[0],"width"))
+           list.addEventListener("touchstart",function(ev){
+                     ev.preventDefault();
+                 var ex=ev.changedTouches[0].pageX;
+                     oleft=this.offsetLeft
+
+           list.addEventListener("touchmove",function(ev){
+               var dis=ev.changedTouches[0].pageX-ex;
+               list.style.left=oleft+dis+"px";
+           }) 
+           list.addEventListener("touchend",function(ev){
+                 n=Math.round(this.offsetLeft/w);
+                 if(n>0){
+                    n=0;
+                 }
+                 if(n<-(lis.length-1)){
+                    n=-(lis.length-1);
+                 }
+                 list.style.left=n*w+"px";
+
+           })
+         })
+       </script>
+    </body>
+</html>
